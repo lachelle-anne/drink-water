@@ -13,13 +13,14 @@ function highlightCups(index){
     if(smallCups[index].classList.contains('full') && !smallCups[index].nextElementSibling.classList.contains('full')){
         index--;
     }
-
-      if(index2 <= index){
-        cup.classList.add('full');
-      }  
-      else{
-        cup.classList.remove('full');  
-      }
+    smallCups.forEach((cup, index2) => {
+        if(index2 <= index){
+            cup.classList.add('full');
+        }  
+        else{
+            cup.classList.remove('full');  
+        }
+    })
     updateBigCup();
 }
 
